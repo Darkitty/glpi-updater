@@ -50,11 +50,9 @@ echo "Date modification : 28/07/2017"
 echo "Alias : backup-glpi"
 echo "-------------------"
 echo ""
-echo -e "${BLUE}####################################${NC}"
 echo -e "${BLUE}########### UPDATE GLPI ############${NC}"
-echo -e "${BLUE}####    $(date "+%d-%m-%Y %H:%M:%S")      ###${NC}"
-echo -e "${BLUE}############# RABAUD ###############${NC}"
-echo -e "${BLUE}####################################${NC}"
+echo -e "${BLUE}----    $(date "+%d-%m-%Y %H:%M:%S")     ----${NC}"
+echo -e "${BLUE}------------------------------------${NC}"
 echo -e "${YELLOW}## Vérifications des versions ##${NC}"
 latestversion=$(curl -s https://github.com/glpi-project/glpi/releases/latest | cut -d\/ -f8 | cut -d\" -f 1)
 currentversion=$(cat /root/glpiversion.txt)
@@ -155,9 +153,8 @@ if [[ $nouvelleversion -gt $verisonactuelle ]]; then
 	echo -e " -> Mise à jour du fichier de version : OK"
 else
 	echo ""
-	echo -e "${BLUE}####################################${NC}"
-	echo -e "${BLUE}############### FIN ################${NC}"
+	echo -e "${BLUE}------------------------------------${NC}"
 	echo -e "${BLUE}####    $(date "+%d-%m-%Y %H:%M:%S")      ###${NC}"
-	echo -e "${BLUE}######### GLPI déjà à jour #########${NC}"
+	echo -e "${BLUE}######    NO UPDATE  NEEDED    #####${NC}"
 	echo -e "${BLUE}####################################${NC}"
 fi
