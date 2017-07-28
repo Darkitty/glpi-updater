@@ -20,3 +20,12 @@ git clone https://github.com/bilyboy785/glpi-updater.git /opt/glpi-updater
 touch /root/glpiversion.txt
 echo "{VOTRE-VERSION}" > /root/glpiversion.txt
 ```
+
+Si besoin, créez un alias de la commande **bash /opt/glpi-updater/update-glpi.sh**.
+
+### Automatisation
+Le script vérifie la présence de mise à jour : si aucune n'est trouvée, rien ne se passe. Vous pouvez donc programmer ce script toutes les semaines sans risquer de mettre en rideau votre installation GLPI :
+```bash
+crontab -e
+0 23 * * * bash /opt/glpi-updater/update-glpi.sh
+```
