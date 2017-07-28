@@ -6,4 +6,17 @@ Les mises à jour GLPI sont affichée dans le footer de la page, mais aucun syst
 
 Le script va générer un fichier de configuration sous /etc avec les informations nécessaires, et puiser de dans à chaque lancement.
 
+* Vérification de la présence de mise à jour
 * Génération d'un fichier de configuration sous ETC
+* Création d'une sauvegarde des fichiers GLPI
+* Dump de la base et compression
+* Récupération de la dernière version (ou version de son choix) de GLPI
+* Installation et mise à jour des droits sur les fichiers
+
+### Utilisation
+Pour utiliser ce script de mise à jour, commencez par clôner le repo :
+```bash
+git clone https://github.com/bilyboy785/glpi-updater.git /opt/glpi-updater
+touch /root/glpiversion.txt
+echo "{VOTRE-VERSION}" > /root/glpiversion.txt
+```
